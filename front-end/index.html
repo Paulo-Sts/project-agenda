@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Contatos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Agenda de Contatos</h1>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Nome" required>
+        <input type="text" id="phone" placeholder="Telefone" required>
+        <button type="submit">Adicionar Contato</button>
+    </form>
+
+    <ul id="contactList"></ul>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const contactList = document.getElementById('contactList');
+
+        // Função para listar contatos
+        const listContacts = async () => {
+            const response = await fetch('http://localhost:3000/contatos'); // Altere a URL conforme necessário
+            const contacts = await response.json();
+            contactList.innerHTML = ''; // Limpar a lista antes de adicionar novos contatos
+            contacts.forEach(contact => {
+                const li = document.createElement('li');
+                li.textContent = `${contact.nome} - ${contact.telefone}`;
+                contactList.appendChild(li);
+            });
+        };
+
+        // Função para adicionar um contato
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Impede o envio padrão do formulário
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            await fetch('http://localhost:3000/contatos', { // Altere a URL conforme necessário
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ nome: name, telefone: phone }),
+            });
+
+            contactForm.reset(); // Limpar o formulário após adicionar
+            listContacts(); // Atualizar a lista de contatos
+        });
+
+        // Carregar contatos ao iniciar
+        listContacts();
+    </script>
+</body>
+</html>
