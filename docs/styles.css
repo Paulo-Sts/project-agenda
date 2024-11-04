@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    box-sizing: border-box;
+    padding-top: 1%;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: #1E1E1E;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin: 1% auto;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add {
+    padding: 12px;
+    font-size: 18px;
+    background-color: #1E1E1E;
+    color: #87CEEB;
+    border: none;
+    /* border-radius: 8px; */
+    cursor: pointer;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    padding: 10px;
+    border-radius: 6px; 
+    margin: 10px 0;
+}
+
+li:hover, .add:hover {
+    background-color: #333;
+}
+
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1; /* Fica em cima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Permite rolagem se necessário */
+    background-color: rgba(30,30,30,0.4); /* Fundo semi-transparente */
+}
+
+.modal-content {
+    background-color: #1E1E1E;
+    margin: 15% auto; /* Centraliza o modal */
+    padding: 20px;
+    border: 1px solid #888; 
+    width: 300px; /* Largura do modal */
+    border-radius: 5px;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column; /* Alinha os inputs em coluna */
+    align-items: center; /* Centraliza os inputs horizontalmente */
+}
+
+.modal-content input {
+    margin: 10px 0; /* Espaçamento entre os inputs */
+    width: 80%; /* Define a largura dos inputs */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between; /* Alinha os itens nas extremidades */
+    align-items: center; /* Alinha verticalmente no centro */
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color:#fff;
+}
+
+/* .save-button {
+    border: none;
+    background-color: none; /* Remove a cor de fundo 
+    color: #E0E0E0; /* Cor do texto 
+    padding: 5px 5px; /* Espaçamento interno 
+    cursor: pointer; /* Muda o cursor ao passar 
+    width: 70px;
+} */
+
+.save-button {
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Borda do botão */
+    background-color: #87CEEB; /* Remove a cor de fundo */
+    color: #E0E0E0; /* Cor do texto */
+    padding: 5px 5px; /* Espaçamento interno */
+    cursor: pointer; /* Muda o cursor ao passar */
+    width: 70px;
+}
+
+.circle {
+    width: 80px; /* Ajuste o tamanho do círculo */
+    height: 80px; /* Ajuste o tamanho do círculo */
+    background-color: #1E1E1E; /* Cor do círculo */
+    border-radius: 50%; /* Faz o círculo */
+    margin: 30px auto; /* Centraliza o círculo */
+}
+
+input {
+    height: 20px; 
+    width: 80%; 
+    margin: 10px 0;
+    padding: 10px; 
+    text-align: left;
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+}

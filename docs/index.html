@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda de Contatos</title>
-    <style>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Agenda de Contatos</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Contatos</h1>
+            <button id="addContactBtn" class="add">Criar novo contato</button>
+
+            <div id="formModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Criar Contato</h2>
+                        <button id="saveButton" class="save-button" type="submit">Salvar</button>
+                    </div>
+                    <div class="circle"></div>
+                    <form id="contactForm">
+                        <input id="name" type="text" placeholder="Nome" required>
+                        <input id="phone" type="tel" placeholder="Telefone" required>
+                    </form>
+                </div>
+            </div>
+
+            <ul id="contactList">
+                <!-- Contatos serão listados aqui -->
+            </ul>
+        </div>
+
+        <script src="script.js"></script>
+    
+    </body>
+</html>
+
+<!-- <style>
         body {
             font-family: Arial, sans-serif;
         }
@@ -29,19 +62,9 @@
         li {
             margin: 5px 0;
         }
-    </style>
-</head>
-<body>
-    <h1>Agenda de Contatos</h1>
-    <form id="contactForm">
-        <input type="text" id="name" placeholder="Nome" required>
-        <input type="text" id="phone" placeholder="Telefone" required>
-        <button type="submit">Adicionar Contato</button>
-    </form>
+    </style> -->
 
-    <ul id="contactList"></ul>
-
-    <script>
+<!-- <script>
         const contactForm = document.getElementById('contactForm');
         const contactList = document.getElementById('contactList');
 
@@ -77,6 +100,4 @@
 
         // Carregar contatos ao iniciar
         listContacts();
-    </script>
-</body>
-</html>
+    </script> -->
