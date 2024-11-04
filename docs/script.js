@@ -1,4 +1,4 @@
-// Função para listar contatos
+//Função para listar contatos
 const contactList = document.getElementById('contactList')
 
 const listContacts = async () => {
